@@ -8,7 +8,7 @@ const routes: Routes = [
    {path: '', redirectTo: 'login', pathMatch: 'full'},
    { path: '', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule), canActivate: [AuthGuard]},
   // { path: 'login', component: LoginComponent, canActivate: [AuthGuard]}
-   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
+   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard]},
 ];
 
 @NgModule({
