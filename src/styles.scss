@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "themes/styles/dashboard.scss";
+@import "themes/styles/dashboardTheme.scss";
+/* Importing Bootstrap SCSS file. */
+.btn-green {
+	color: #fff;
+	background-color: #1cc88a;
+	border-color: #1cc88a;
+}
+.btn-green:hover {
+	color: #fefefe;
+	border: 1px solid #32a852;
+}

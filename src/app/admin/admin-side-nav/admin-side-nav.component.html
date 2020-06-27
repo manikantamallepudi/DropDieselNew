@@ -1,0 +1,58 @@
+  <!-- Sidebar -->
+  <div class="">
+    <ul class="navbar-nav sidebar-dark bg-success shadow sidebar accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex" [routerLink]="['/dashboard']" >
+        <div class="sidebar-brand-text">Drop Diesel</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./dashboard']" >
+          <span>Dashboard</span></a>
+      </li>
+	    <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./profile']">
+          <span>Profile</span></a>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./pending-orders']" >
+          
+          <span>Pending Orders</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./complete-orders']" >
+          
+          <span>Complete Orders</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./canceled-orders']" >
+          
+          <span>Canceled Orders</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./assigned-orders']" >
+          
+          <span>Assigned Orders</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./future-orders']" >
+          
+          <span>Future Orders</span></a>
+      </li>	  
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./order-history']" >
+          
+          <span>Order History</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/login']" >
+          <span>Logout</span></a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
