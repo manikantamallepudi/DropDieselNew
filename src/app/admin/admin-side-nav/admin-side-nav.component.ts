@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
 })
 export class AdminSideNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
     //Toggle Click Function
@@ -16,7 +17,11 @@ export class AdminSideNavComponent implements OnInit {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+  }
 
+  logout(){
+    this.route.navigateByUrl('/login');
+    localStorage.clear();
   }
 
 }

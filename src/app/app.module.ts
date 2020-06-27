@@ -1,3 +1,5 @@
+import { AuthModule } from './auth/auth.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './auth/authguard.service';
 import { ProfileEditModalComponent } from './admin/profile/profile-edit-modal/profile-edit-modal.component';
 import { AdminTopNavComponent } from './admin/admin-top-nav/admin-top-nav.component';
@@ -20,10 +22,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     // AdminTopNavComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    AuthModule,
     // AdminModule,
     AppRoutingModule,
-    FormsModule,
     NgbModule,
     ReactiveFormsModule
   ],
