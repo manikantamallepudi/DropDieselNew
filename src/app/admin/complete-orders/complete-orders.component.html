@@ -37,9 +37,9 @@
               <td>{{order.CUSTOMER_CONTACT_NUMBER}}</td>
               <td>{{order.PAYMENT_MODE}}</td>
               <td>{{order.DEALER_NAME}}</td>
-              <td><a class="" href="#" data-toggle="modal" data-target="#">
+              <td><span class="order-info" (click)="orderInformation(order)" data-toggle="modal" data-target="#">
                 <i class="fa fa-file ml-4" aria-hidden="true"></i>
-            </a></td>
+              </span></td>
             </tr>
             
             

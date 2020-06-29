@@ -11,6 +11,7 @@ import { userRegistration } from './../../Models/userRegistration';
 })
 export class LoginComponent implements OnInit {
 
+  public loginRes:any;
   registrationForm: FormGroup;
   loginForm: FormGroup;
   roles: any;
@@ -41,8 +42,8 @@ export class LoginComponent implements OnInit {
 
   buildLoginForm() {
     this.loginForm = this.fb.group({
-      userName: [''],
-      password: ['']
+      userName: ['',Validators.required],
+      password: ['',Validators.required]
     });
   }
 
@@ -61,6 +62,8 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+  
+  get l() { return this.loginForm.controls; }
 
   get f() { return this.registrationForm.controls; }
 
@@ -69,7 +72,8 @@ export class LoginComponent implements OnInit {
     let userData: any = window.btoa(loginData.userName + ":" + loginData.password);
     this.authService.userLogin(userData).subscribe(res => {
       console.log(res);
-      if (res) {
+      this.loginRes  = res;
+      if (this.loginRes.success != 0) {
         localStorage.setItem('userDetails', JSON.stringify(res));
         this.route.navigateByUrl('/admin');
       }

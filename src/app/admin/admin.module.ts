@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AssignedOrdersComponent } from './assigned-orders/assigned-orders.component';
 import { ProfileEditModalComponent } from './profile/profile-edit-modal/profile-edit-modal.component';
 import { AdminViewportComponent } from './admin-viewport/admin-viewport.component';
+import { OrderInfoModalComponent } from './order-info-modal/order-info-modal.component';
 
 export const routes: Routes = [
   //{ path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -43,7 +44,8 @@ export const routes: Routes = [
       AssignedOrdersComponent,
       AdminViewportComponent,
       AdminSideNavComponent,
-      AdminTopNavComponent
+      AdminTopNavComponent,
+      OrderInfoModalComponent
       //ProfileEditModalComponent,
   ],
   imports: [

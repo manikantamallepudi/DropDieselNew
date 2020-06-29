@@ -1,5 +1,5 @@
   <!-- Sidebar -->
-  <div class="">
+  <div class="" style="height: 100%;">
     <ul class="navbar-nav sidebar-dark bg-success shadow sidebar accordion" id="accordionSidebar">
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex" [routerLink]="['/dashboard']" >
@@ -50,7 +50,7 @@
           <span>Order History</span></a>
       </li>
 	  <li class="nav-item active">
-        <a class="nav-link" (click)="logout()" >
+        <a style="cursor: pointer;" class="nav-link" (click)="logout()" >
           <span>Logout</span></a>
       </li>
     </ul>

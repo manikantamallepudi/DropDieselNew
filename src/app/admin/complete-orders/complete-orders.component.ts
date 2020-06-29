@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServices } from '../service/admin-service.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { OrderInfoModalComponent } from '../order-info-modal/order-info-modal.component';
 
 @Component({
   selector: 'app-complete-orders',
@@ -9,7 +11,7 @@ import { AdminServices } from '../service/admin-service.service';
 export class CompleteOrdersComponent implements OnInit {
   public completedOrders:any;
 
-  constructor(public adminService:AdminServices) { }
+  constructor(public adminService:AdminServices,private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getCompletedOrders();
@@ -19,6 +21,11 @@ export class CompleteOrdersComponent implements OnInit {
     this.adminService.getOrdersInformation(`completed`).subscribe(res => {
       this.completedOrders = res['data'];
     })
+  }
+
+  orderInformation(order){
+    // const modalRef = this.modalService.open(OrderInfoModalComponent);
+    // modalRef.componentInstance.name = 'World';
   }
 
 }
