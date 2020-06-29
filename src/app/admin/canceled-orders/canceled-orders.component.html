@@ -27,42 +27,17 @@
             
           </tfoot>
           <tbody>
-            <tr>
-              <td>100024290</td>
-              <td>Mahesh</td>
+            <tr *ngFor="let order of cancelledOrders">
+              <td>{{order.ORDER_ID}}</td>
+              <td>{{order.CONSUMER_NAME}}</td>
               <td>12/16/2019</td>
               <td>Jubliee Hills, Hyd</td>
-              <td>M.R</td>
-              <td>Cancelled</td>
+              <td>{{order.DEALER_NAME}}</td>
+              <td>{{order.ORDER_STATUS}}</td>
               <td><a class="" href="#" data-toggle="modal" data-target="#logoutModal">
                 <i class="fa fa-file ml-4" aria-hidden="true"></i>
             </a></td>
-            </tr>
-            <tr>
-             
-              <td>100024284</td>
-              <td>Aditya</td>
-              <td>11/20/2019</td>
-              <td>Gachibowli, Hyd</td>
-              <td>V.R.D</td>
-              <td>Cancelled</td>
-              <td><a class="" href="#" data-toggle="modal" data-target="#logoutModal">
-                <i class="fa fa-file ml-4" aria-hidden="true"></i>
-            </a></td>
-            </tr>
-            <tr>
-         
-              <td>100024282</td>
-              <td>Praveen</td>
-              <td>11/15/2019</td>
-              <td>Madhapur, Hyd</td>
-              <td>My Home</td>
-              <td>Cancelled</td>
-              <td><a class="" href="#" data-toggle="modal" data-target="#logoutModal">
-                <i class="fa fa-file ml-4" aria-hidden="true"></i>
-            </a></td>
-            </tr>
-            
+            </tr>            
           </tbody>
         </table>
       </div>

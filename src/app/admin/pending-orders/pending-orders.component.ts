@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServices } from '../service/admin-service.service';
 
 
 @Component({
@@ -8,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PendingOrdersComponent implements OnInit {
 
-  constructor() { }
+  pendingOrders:any;
+
+  constructor(public adminService:AdminServices) { }
 
   ngOnInit(): void {
+    this.getPendingOrders();
+  }
+
+  getPendingOrders(){
+    this.adminService.getOrdersInformation(`pending`).subscribe(res => {
+      this.pendingOrders = res['data'];
+    })
   }
 
 }

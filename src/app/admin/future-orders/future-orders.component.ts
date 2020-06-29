@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServices } from '../service/admin-service.service';
 
 @Component({
   selector: 'app-future-orders',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./future-orders.component.scss']
 })
 export class FutureOrdersComponent implements OnInit {
-
-  constructor() { }
+  
+  public futureOrders:any;
+  constructor(public adminService:AdminServices) { }
 
   ngOnInit(): void {
+    this.getFutureOrders();
+  }
+
+  getFutureOrders(){
+    this.adminService.getOrdersInformation(`future`).subscribe(res => {
+      this.futureOrders = res['data'];
+    })
   }
 
 }

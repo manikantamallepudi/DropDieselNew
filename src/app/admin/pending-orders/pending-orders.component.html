@@ -24,44 +24,14 @@
 
           </tfoot>
           <tbody>
-            <tr>
-              <td>100034284</td>
-              <td>Mahesh</td>
+            <tr *ngFor="let order of pendingOrders">
+              <td>{{order.ORDER_ID}}</td>
+              <td>{{order.CONSUMER_NAME}}</td>
               <td>Gachibowli, Hyd</td>
-              <td>9987483456</td>
-              <td>Cash on Delivery</td>
-              <td>Not Paid</td>
-              <td>Suresh</td>
-              <td>
-                <div class="form-check ml-5">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1"></label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>100034283</td>
-              <td>Praveen</td>
-              <td>Jubliee Hills, Hyd</td>
-              <td>9983453366</td>
-              <td>Cash on Delivery</td>
-              <td>Not Paid</td>
-              <td>Kiran</td>
-              <td>
-                <div class="form-check ml-5">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1"></label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>100034282</td>
-              <td>Vishwak</td>
-              <td>Madhapur, Hyd</td>
-              <td>9984367820</td>
-              <td>Cash on Delivery</td>
-              <td>Not Paid</td>
-              <td>Kishan</td>
+              <td>{{order.CUSTOMER_CONTACT_NUMBER}}</td>
+              <td>{{order.PAYMENT_MODE}}</td>
+              <td>{{order.PAYMENT_STATUS}}</td>
+              <td>{{order.DEALER_NAME}}</td>
               <td>
                 <div class="form-check ml-5">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServices } from '../service/admin-service.service';
 
 @Component({
   selector: 'app-canceled-orders',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CanceledOrdersComponent implements OnInit {
 
-  constructor() { }
+  public cancelledOrders:any;
+
+  constructor(public adminService:AdminServices) { }
 
   ngOnInit(): void {
+    this.getCancelledOrders();
+  }
+
+  getCancelledOrders(){
+    this.adminService.getOrdersInformation(`canceled`).subscribe(res => {
+      this.cancelledOrders = res['data'];
+    })
   }
 
 }

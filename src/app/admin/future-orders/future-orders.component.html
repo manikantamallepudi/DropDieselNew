@@ -29,39 +29,15 @@
 
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>100034284</td>
-                                <td>Mahesh</td>
+                            <tr  *ngFor="let future of futureOrders">
+                                <td>{{future.ORDER_ID}}</td>
+                                <td>{{future.CONSUMER_NAME}}</td>
                                 <td>31/03/2020</td>
                                 <td>Gachibowli, Hyd</td>
-                                <td>9987483456</td>
-                                <td>Cash on Delivery</td>
-                                <td>Not Paid</td>
+                                <td>{{future.CUSTOMER_CONTACT_NUMBER}}</td>
+                                <td>{{future.PAYMENT_MODE}}</td>
+                                <td>{{future.PAYMENT_STATUS}}</td>
                                 <td><a class="" href="#" data-toggle="modal" data-target="#logoutModal">
-                                        <i class="fa fa-file fa-fw ml-4"></i>
-                                    </a></td>
-                            </tr>
-                            <tr>
-                                <td>100034283</td>
-                                <td>Suresh</td>
-                                <td>04/04/2020</td>
-                                <td>Bachpally, Hyd</td>
-                                <td>9989074352</td>
-                                <td>Cash on Delivery</td>
-                                <td>Not Paid</td>
-                                <td><a class="" href="#" data-toggle="modal" data-target="#">
-                                        <i class="fa fa-file fa-fw ml-4"></i>
-                                    </a></td>
-                            </tr>
-                            <tr>
-                                <td>100034281</td>
-                                <td>Kumar</td>
-                                <td>20/04/2020</td>
-                                <td>Jubliee Hills, Hyd</td>
-                                <td>9676532189</td>
-                                <td>Cash on Delivery</td>
-                                <td>Not Paid</td>
-                                <td><a class="" href="#" data-toggle="modal" data-target="#">
                                         <i class="fa fa-file fa-fw ml-4"></i>
                                     </a></td>
                             </tr>

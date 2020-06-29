@@ -12,41 +12,63 @@
                         for="tab-2" class="tab">Sign Up</label>
                     <div class="login-space">
                         <div class="login">
-                            <form  [formGroup]="loginForm"  (ngSubmit)="onLoginSubmit()">
-                                <div class="group"> <label for="user" class="label">Username</label> <input id="user" type="text" class="input"
-                                        placeholder="Enter your username" formControlName="userName"> </div>
-                                <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input"
-                                        data-type="password" placeholder="Enter your password" formControlName="password"> </div>
-                                <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span
-                                            class="icon"></span> Remember Me</label> </div>
+                            <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+                                <div class="group"> <label for="user" class="label">Username</label> <input id="user"
+                                        type="text" class="input" placeholder="Enter your username"
+                                        formControlName="userName"> </div>
+                                <div class="group"> <label for="pass" class="label">Password</label> <input id="pass"
+                                        type="password" class="input" data-type="password"
+                                        placeholder="Enter your password" formControlName="password"> </div>
+                                <div class="group"> <input id="check" type="checkbox" class="check" checked> <label
+                                        for="check"><span class="icon"></span> Remember Me</label> </div>
                                 <div class="group">
-                                    <button type="submit" class="button" >Sign In</button>
+                                    <button type="submit" class="button">Sign In</button>
                                 </div>
                             </form>
                             <!-- <div class="foot"> <a href="#">Forgot Password?</a> </div> -->
                         </div>
                         <div class="sign-up-form">
-                            <form [formGroup]="registrationForm"  (ngSubmit)="onRegistrationSubmit()" >
+                            <form [formGroup]="registrationForm" (ngSubmit)="onRegistrationSubmit()">
                                 <div class="group custom-control custom-radio" *ngIf="roles">
                                     <label for="user" class="label">Role</label>
-                                   <span *ngFor="let role of roles;let i = index" class="col-4"> <input id="{{role.roles}}" type="radio"  class="custom-control-input" value="{{role.roles}}" name="role" formControlName="role">
-                                    <label class="custom-control-label" for="{{role.roles}}">{{role.roles}}</label></span>
-                                  </div>
+                                    <span *ngFor="let role of roles;let i = index" class="col-4"> <input
+                                            id="{{role.roles}}" type="radio" class="custom-control-input"
+                                            value="{{role.roles}}" name="role" formControlName="role">
+                                        <label class="custom-control-label"
+                                            for="{{role.roles}}">{{role.roles}}</label></span>
+                                </div>
                                 <div class="group"> <label for="user" class="label">Username</label> <input id="user"
-                                        formControlName="firstName" type="text" class="input user-name" placeholder="Create your Firstname" required>
+                                        formControlName="firstName" type="text" class="input user-name"
+                                        [ngClass]="{ 'is-invalid': f.firstName.touched && f.firstName.errors }"
+                                        placeholder="Create your Firstname" required>
                                     <input id="user" formControlName="lastName" type="text" class="input user-name"
-                                        placeholder="Create your Lastname" required></div>
-                                <div class="group"> <label for="pass" class="label">Mobile</label> <input id="pass" formControlName="mobile"
-                                        type="text" class="input" placeholder="Enter your mobile number"  maxlength="10" required> </div>
-                                <div class="group"> <label for="pass" class="label">Email Address</label> <input id="pass"
-                                        formControlName="email" type="email" class="input" placeholder="Enter your email address" required> </div>
-                                <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" formControlName="password"
-                                        type="password" class="input" data-type="password" placeholder="Create your password"> </div>
-                                <div class="group"> <label for="pass" class="label">Repeat Password</label> <input id="pass" type="password"
-                                        class="input" data-type="password" placeholder="Repeat your password"> </div>
+                                        placeholder="Create your Lastname"
+                                        [ngClass]="{ 'is-invalid': f.lastName.touched && f.lastName.errors }" required>
+                                </div>
+                                <div class="group"> <label for="pass" class="label">Mobile</label> <input id="pass"
+                                        formControlName="mobile" type="number" class="input"
+                                        placeholder="Enter your mobile number"
+                                        [ngClass]="{ 'is-invalid': f.mobile.touched && f.mobile.errors }" maxlength="10"
+                                        required> </div>
+                                <div class="group"> <label for="pass" class="label">Email Address</label> <input
+                                        id="pass" formControlName="email" type="email" class="input"
+                                        [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }"
+                                        placeholder="Enter your email address" required> </div>
+                                <div class="group"> <label for="pass" class="label">Password</label> <input id="pass"
+                                        [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors }"
+                                        formControlName="password" type="password" class="input" data-type="password"
+                                        placeholder="Create your password"> </div>
+                                <div class="group"> <label for="pass" class="label">Repeat Password</label> <input
+                                        id="pass" type="password" formControlName="confirmPassword" class="input"
+                                        data-type="password" placeholder="Repeat your password">
+                                    <span class="text-danger"
+                                        *ngIf="f.confirmPassword.touched && f.confirmPassword.errors?.passwordMismatch">
+                                        Passwords doesnot match
+                                    </span> </div>
                                 <div class="group">
                                     <!-- <input type="submit" class="button" value="Sign Up">  -->
-                                    <button type="submit" [ngClass]="{'btnDisabled':!registrationForm.valid}" [disabled]="!registrationForm.valid" class="button">Sign Up</button></div>
+                                    <button type="submit" [ngClass]="{'btnDisabled':!registrationForm.valid}"
+                                        [disabled]="!registrationForm.valid" class="button">Sign Up</button></div>
                             </form>
                             <!-- <div class="foot"> <label for="tab-1">Already Member?</label> </div> -->
                         </div>

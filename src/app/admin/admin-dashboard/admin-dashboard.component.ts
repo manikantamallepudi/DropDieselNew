@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServices } from '../service/admin-service.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public adminService:AdminServices) { }
 
   ngOnInit() {
+    // this.getCompletedOrders();
+  }
+
+  getCompletedOrders(){
+    this.adminService.getOrdersInformation("").subscribe(res => {
+      console.log(res);
+    })
   }
 
 }

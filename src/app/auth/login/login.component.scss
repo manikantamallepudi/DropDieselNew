@@ -91,11 +91,16 @@ body {
     background: rgba(255, 255, 255, .1);
     outline: none;
     color: black;
+
+
 }
 .group .user-name{
     display: inline !important;
     width: 50% !important;
 }
+.login-space .group .is-invalid{
+    border: 1px solid #f90628d9;
+    }
 
 .login-space .group input[data-type="password"] {
     text-security: circle;

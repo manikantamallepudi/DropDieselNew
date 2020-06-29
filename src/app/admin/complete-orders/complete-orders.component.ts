@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServices } from '../service/admin-service.service';
 
 @Component({
   selector: 'app-complete-orders',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./complete-orders.component.scss']
 })
 export class CompleteOrdersComponent implements OnInit {
+  public completedOrders:any;
 
-  constructor() { }
+  constructor(public adminService:AdminServices) { }
 
   ngOnInit(): void {
+    this.getCompletedOrders();
+  }
+
+  getCompletedOrders(){
+    this.adminService.getOrdersInformation(`completed`).subscribe(res => {
+      this.completedOrders = res['data'];
+    })
   }
 
 }
