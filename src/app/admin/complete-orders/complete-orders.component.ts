@@ -24,8 +24,8 @@ export class CompleteOrdersComponent implements OnInit {
   }
 
   orderInformation(order){
-    // const modalRef = this.modalService.open(OrderInfoModalComponent);
-    // modalRef.componentInstance.name = 'World';
+    const modalRef = this.modalService.open(OrderInfoModalComponent);
+    modalRef.componentInstance.orderInfo = order;
   }
 
 }

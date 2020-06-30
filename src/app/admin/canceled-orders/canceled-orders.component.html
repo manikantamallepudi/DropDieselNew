@@ -34,9 +34,9 @@
               <td>Jubliee Hills, Hyd</td>
               <td>{{order.DEALER_NAME}}</td>
               <td>{{order.ORDER_STATUS}}</td>
-              <td><a class="" href="#" data-toggle="modal" data-target="#logoutModal">
+              <td><span class="order-info" (click)="orderInformation(order)" data-toggle="modal" data-target="#logoutModal">
                 <i class="fa fa-file ml-4" aria-hidden="true"></i>
-            </a></td>
+              </span></td>
             </tr>            
           </tbody>
         </table>
