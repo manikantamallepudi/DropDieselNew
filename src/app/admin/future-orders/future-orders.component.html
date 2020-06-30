@@ -29,7 +29,7 @@
 
                         </tfoot>
                         <tbody>
-                            <tr  *ngFor="let future of futureOrders">
+                            <tr *ngFor="let future of futureOrders">
                                 <td>{{future.ORDER_ID}}</td>
                                 <td>{{future.CONSUMER_NAME}}</td>
                                 <td>31/03/2020</td>
@@ -37,9 +37,10 @@
                                 <td>{{future.CUSTOMER_CONTACT_NUMBER}}</td>
                                 <td>{{future.PAYMENT_MODE}}</td>
                                 <td>{{future.PAYMENT_STATUS}}</td>
-                                <td><a class="" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <td><span class="order-info" (click)="orderInformation(future)" data-toggle="modal"
+                                        data-target="#logoutModal">
                                         <i class="fa fa-file fa-fw ml-4"></i>
-                                    </a></td>
+                                    </span></td>
                             </tr>
                         </tbody>
                     </table>

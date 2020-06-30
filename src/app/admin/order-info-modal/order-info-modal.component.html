@@ -1,12 +1,21 @@
 <div class="modal-header">
-    <h4 class="modal-title">Hi there!</h4>
+    <h4 class="modal-title">Order Information</h4>
     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  <div class="modal-body">
-    <p>Hello, {{name}}!</p>
-  </div>
-  <div class="modal-footer">
+</div>
+<div class="modal-body">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped" id="" width="100%" cellspacing="0">
+            <tr *ngFor="let key of orderKeys">
+                <th>{{key}}</th>
+                <td>
+                    {{orderInfo[key]}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-  </div>
+</div>

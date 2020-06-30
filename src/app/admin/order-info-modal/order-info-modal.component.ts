@@ -7,11 +7,14 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./order-info-modal.component.scss']
 })
 export class OrderInfoModalComponent implements OnInit {
-  @Input() name;
+  @Input() orderInfo;
+  public orderKeys;
 
   constructor(public activeModal: NgbActiveModal) {}
 
   ngOnInit(): void {
+    this.orderKeys = Object.keys(this.orderInfo);
   }
+
 
 }
