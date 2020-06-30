@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsumerService } from '../services/consumer.service';
 
 @Component({
   selector: 'app-consumer-dashboard',
@@ -7,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsumerDashboardComponent implements OnInit {
 
-  lat:number = 17.428507117378494;
-  long:number = 78.40599243921739;
+  lat: number = 17.428507117378494;
+  long: number = 78.40599243921739;
   mapZoom: number = 18;
 
-  constructor() { }
+  constructor(public consumerService: ConsumerService) { }
 
   ngOnInit(): void {
+    this.getDealers();
+  }
+
+  getDealers() {
+    this.consumerService.getDealersInformation().subscribe(res => {
+      console.log(res)
+    })
   }
 
 }
