@@ -1,0 +1,12 @@
+.nav-item a:hover{
+    //background-color: #ddd;
+    // box-shadow: inset 0 0 20px rgba(1, 1, 1, .16);
+    // box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    border-right: 3px solid #FFA500;
+    transition: all 300ms linear;
+    //border-bottom: 2px solid #FFA500;
+}
+.sidebar{
+    height: 100%;
+  }

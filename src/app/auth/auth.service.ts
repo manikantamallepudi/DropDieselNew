@@ -13,6 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   isAuthenticated(): boolean {
+    console.log('here');
     let userDetails:any = JSON.parse(localStorage.getItem('userDetails'));
     if(userDetails){
       return true;

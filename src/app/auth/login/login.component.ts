@@ -11,6 +11,7 @@ import { userRegistration } from './../../Models/userRegistration';
 })
 export class LoginComponent implements OnInit {
 
+  showLogin:boolean = false;
   public loginRes:any;
   registrationForm: FormGroup;
   loginForm: FormGroup;
@@ -35,6 +36,12 @@ export class LoginComponent implements OnInit {
   constructor(private route: Router, private fb: FormBuilder, private authService: AuthService) { }
 
   ngOnInit(): void {
+    let user:any = JSON.parse(localStorage.getItem('userDetails'));
+      if(user){
+        this.route.navigate([(user.data.role).toLowerCase()]);
+      } else{
+        this.showLogin = true;
+      }
     this.getUserRoles();
     this.buildLoginForm();
     this.buildRegistrationForm();
@@ -75,7 +82,10 @@ export class LoginComponent implements OnInit {
       this.loginRes  = res;
       if (this.loginRes.success != 0) {
         localStorage.setItem('userDetails', JSON.stringify(res));
-        this.route.navigateByUrl('/admin');
+        if (res) {
+          // this.route.navigateByUrl('/admin');
+          this.route.navigateByUrl(`/${res.data.role.toLowerCase()}`);
+        }     
       }
     })
   }
@@ -104,10 +114,6 @@ export class LoginComponent implements OnInit {
     this.userProfile.dl_number = formValue.dl_number ? formValue.dl_number : '';
     this.userProfile.password = window.btoa(formValue.password);
     return this.userProfile;
-  }
-
-  login() {
-    this.route.navigateByUrl('/admin');
   }
 
   getUserRoles() {

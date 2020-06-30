@@ -1,0 +1,49 @@
+  <!-- Sidebar -->
+  <div class="" style="height: 100%;">
+    <ul class="navbar-nav sidebar-dark bg-success shadow sidebar accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex" [routerLink]="['./neworder']" >
+        <div class="sidebar-brand-text">Drop Diesel</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+	    <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./profile']">
+          <span>Profile</span></a>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./neworder']" >
+          
+          <span>New Order</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./myorders']" >
+          
+          <span>My Orders</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./myaddresses']" >
+          
+          <span>My Addresses</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./order-statistics']" >
+          
+          <span>Order Statistics</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['./contact-us']" >
+          
+          <span>Contact Us</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a style="cursor: pointer;" class="nav-link" (click)="logout()" >
+          <span>Logout</span></a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
