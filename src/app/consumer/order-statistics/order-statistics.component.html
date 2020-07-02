@@ -1,1 +1,49 @@
-<p>order-statistics works!</p>
+<div class="container">
+    <div class="row m-0">
+        <div class="col-md-10">
+        <fusioncharts
+        [width]="width"
+        [height]="height"
+        [type]="type"
+        [dataFormat]="dataFormat"
+        [dataSource]="dataSource">
+        </fusioncharts>
+        </div>
+         <!-- Content Row -->
+  <div class="row m-0">
+    <div class="col-lg-12">
+      <!-- DataTales Example -->
+      <div class="card mb-2">
+        <div class="align-items-center">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Delivery Pin</th>
+                  <th scope="col">Delivery Date</th>
+                  <th scope="col">Total Amount</th>
+                  <th scope="col">Payment Status</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tfoot>
+              </tfoot>
+              <tbody>
+                <tr *ngFor="let order of orderInformation">
+                  <td>{{order.ORDER_ID}}</td>
+                  <td>560100</td>
+                  <td>12/20/2019</td>
+                  <td>₹{{order.TOTAL_AMOUNT}}</td>
+                  <td>{{order.PAYMENT_STATUS}}</td>
+                  <td>{{order.DELIVERY_STATUS}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- card end-->
+    </div>
+  </div>
+    </div>
+</div>

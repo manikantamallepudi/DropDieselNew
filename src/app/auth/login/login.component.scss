@@ -7,8 +7,6 @@ body {
 
 .login-box {
     width: 100%;
-    margin: auto;
-    max-width: 525px;
     min-height: 670px;
     position: relative;
     border: 1px solid #00af52;
@@ -202,11 +200,6 @@ a {
 
 .foot {
     text-align: center
-}
-
-.card {
-    width: 500px;
-    left: 100px
 }
 
 ::placeholder {

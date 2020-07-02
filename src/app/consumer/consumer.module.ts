@@ -11,9 +11,19 @@ import { MyAddressesComponent } from './my-addresses/my-addresses.component';
 import { OrderStatisticsComponent } from './order-statistics/order-statistics.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FusionChartsModule } from 'angular-fusioncharts';
+import { AddressEditComponent } from './my-addresses/address-edit/address-edit.component';
+
+// Import FusionCharts library and chart modules
+import * as FusionCharts from "fusioncharts";
+import * as charts from "fusioncharts/fusioncharts.charts";
+import * as FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+
+
+FusionChartsModule.fcRoot(FusionCharts, charts, FusionTheme);
 
 export const routes: Routes = [
-  {path:'', component:ConsumerViewportComponent,
+  {path: '', component: ConsumerViewportComponent,
   children:[
     { path: '', redirectTo: 'neworder', pathMatch: 'full'},
     { path: 'neworder', component: ConsumerDashboardComponent},
@@ -27,13 +37,26 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ConsumerViewportComponent, ConsumerDashboardComponent, ConsumerTopNavComponent, ConsumerSideNavComponent, MyOrdersComponent, MyAddressesComponent, OrderStatisticsComponent, ContactUsComponent, ProfileComponent],
+  declarations: [ConsumerViewportComponent,
+    ConsumerDashboardComponent,
+    ConsumerTopNavComponent,
+    ConsumerSideNavComponent,
+    MyOrdersComponent, MyAddressesComponent,
+    OrderStatisticsComponent,
+    ContactUsComponent,
+    ProfileComponent,
+    AddressEditComponent
+  ],
   imports: [
     CommonModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBNcjxo_35qnEG17dQvvftWa68eZWepYE0'
-    }), 
-    RouterModule.forChild(routes)
+    }),
+    RouterModule.forChild(routes),
+    FusionChartsModule
+  ],
+  entryComponents: [
+    AddressEditComponent,
   ]
 })
 export class ConsumerModule { }

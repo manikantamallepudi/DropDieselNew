@@ -7,7 +7,7 @@ import { ConsumerService } from '../services/consumer.service';
   styleUrls: ['./my-orders.component.scss']
 })
 export class MyOrdersComponent implements OnInit {
-  orderInformation:any;
+  orderInformation: any;
   constructor(public consumerService: ConsumerService) { }
 
   ngOnInit(): void {

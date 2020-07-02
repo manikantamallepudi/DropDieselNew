@@ -1,50 +1,45 @@
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 dp-delivery-title">Order History</h1>
-      <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
-    </div>
-
-    <!-- Content Row -->
-    <div class="row">
-      <!-- DataTales Example -->
-    <div class="card shadow mb-2 col-lg-12">
-      <!-- <div class="card-header py-3"> -->
-       <!-- <h6 class="m-0 font-weight-bold text-primary"></h6> -->
-      <!-- </div> -->
-      <div class="card-body align-items-center">
-        <div class="table-responsive">
-          <table class="table table-bordered table-striped" id="" width="100%" cellspacing="0">
-            <thead>
-              <tr>
-                <th scope="col">Order ID</th>
-                <th scope="col">Delivery Pin</th>
-                <th scope="col">Delivery Date</th>
-                <th scope="col">Total Amount</th>
-                <th scope="col">Payment Status</th>
-                <th scope="col">Status</th>
-                
-              </tr>
-            </thead>
-            <tfoot>
-              
-            </tfoot>
-            <tbody>
-              <tr *ngFor="let order of orderInformation">
-                <td>{{order.ORDER_ID}}</td>
-                <td>560100</td>
-                <td>12/20/2019</td>
-                <td>₹{{order.TOTAL_AMOUNT}}</td>
-                <td>{{order.PAYMENT_STATUS}}</td>
-                <td>{{order.DELIVERY_STATUS}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>			
-    </div><!-- card end-->
-
-    </div>
-
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 dp-delivery-title">Order History</h1>
+    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
   </div>
+
+  <!-- Content Row -->
+  <div class="row m-0">
+    <div class="col-lg-12">
+      <!-- DataTales Example -->
+      <div class="card mb-2">
+        <div class="align-items-center">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Delivery Pin</th>
+                  <th scope="col">Delivery Date</th>
+                  <th scope="col">Total Amount</th>
+                  <th scope="col">Payment Status</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tfoot>
+              </tfoot>
+              <tbody>
+                <tr *ngFor="let order of orderInformation">
+                  <td>{{order.ORDER_ID}}</td>
+                  <td>560100</td>
+                  <td>12/20/2019</td>
+                  <td>₹{{order.TOTAL_AMOUNT}}</td>
+                  <td>{{order.PAYMENT_STATUS}}</td>
+                  <td>{{order.DELIVERY_STATUS}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- card end-->
+    </div>
+  </div>
+</div>

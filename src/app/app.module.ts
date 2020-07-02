@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+import { AddressEditComponent } from './consumer/my-addresses/address-edit/address-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     // AdminModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   entryComponents: [
   ],

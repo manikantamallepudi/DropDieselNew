@@ -34,9 +34,9 @@ export const routes: Routes = [
 
 
 @NgModule({
-  declarations: [ 
+  declarations: [
       PendingOrdersComponent,
-      CompleteOrdersComponent, 
+      CompleteOrdersComponent,
       CanceledOrdersComponent,
       FutureOrdersComponent,
       OrderHistoryComponent,
