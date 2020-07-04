@@ -14,51 +14,51 @@ const data = {
   },
   data: [
     {
-      label: "2005",
+      label: "Jan",
       value: "89.45"
     },
     {
-      label: "2006",
+      label: "Feb",
       value: "89.87"
     },
     {
-      label: "2007",
+      label: "Mar",
       value: "89.64"
     },
     {
-      label: "2008",
+      label: "April",
       value: "90.13"
     },
     {
-      label: "2009",
+      label: "May",
       value: "90.67"
     },
     {
-      label: "2010",
+      label: "June",
       value: "90.54"
     },
     {
-      label: "2011",
+      label: "July",
       value: "90.75"
     },
     {
-      label: "2012",
+      label: "Aug",
       value: "90.8"
     },
     {
-      label: "2013",
+      label: "Sep",
       value: "91.16"
     },
     {
-      label: "2014",
+      label: "Oct",
       value: "91.37"
     },
     {
-      label: "2015",
+      label: "Nov",
       value: "91.66"
     },
     {
-      label: "2016",
+      label: "Dec",
       value: "91.8"
     }
   ]
@@ -88,7 +88,7 @@ export class OrderStatisticsComponent implements OnInit {
   getOrdersInfo(){
     this.consumerService.getOrderHistory().subscribe(res => {
       this.orderInformation = res['data'];
-    })
+    });
   }
 
 }

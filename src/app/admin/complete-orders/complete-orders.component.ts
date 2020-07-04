@@ -11,7 +11,7 @@ import { OrderInfoModalComponent } from '../order-info-modal/order-info-modal.co
 export class CompleteOrdersComponent implements OnInit {
   public completedOrders:any;
 
-  constructor(public adminService:AdminServices,private modalService: NgbModal) { }
+  constructor(public adminService: AdminServices, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getCompletedOrders();
